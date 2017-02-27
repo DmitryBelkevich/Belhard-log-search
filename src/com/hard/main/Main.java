@@ -44,7 +44,7 @@ public class Main {
 		List<MyThread> threads = context.execute();
 		
 		/**
-		 * запуск обработки в отдельных потоках
+		 * run threads
 		 */
 		for (MyThread thread : threads)
 			thread.start();
@@ -58,7 +58,7 @@ public class Main {
 		}
 		
 		/**
-		 * вывод в конечный файл всех найденных записей и общей статистики
+		 * output file of all founded records and total statistic
 		 */
 		recordsBuilder.append("\nTotal statistic:\n\n");
 		for (MyThread thread : threads) {
@@ -72,4 +72,3 @@ public class Main {
 		recordsService.addRecords(new File(outputFile), recordsBuilder.toString());
 	}
 }
-
