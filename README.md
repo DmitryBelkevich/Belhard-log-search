@@ -3,6 +3,7 @@
 input params:
 =============
 rules for RegExp:
+-----------------
 
 - Single filter parameters:
 getAllRecordsByDate | getAllRecordsByDateGreater | getAllRecordsByDateLess
