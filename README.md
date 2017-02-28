@@ -1,6 +1,7 @@
 # Belhard-log-search
 
 input params:
+=============
 rules for RegExp:
 
 - Single filter parameters:
