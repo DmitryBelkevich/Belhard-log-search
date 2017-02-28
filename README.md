@@ -14,5 +14,6 @@ rules for RegExp:
  data - "12:00:07-13:00:06"
 
 - Grouping filter parameters:
+
  GetRecordsType.getAllRecordsByUsernameDateRange;
  data - "12:00:05-13:00:06 [user1]"
