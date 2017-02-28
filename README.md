@@ -8,7 +8,7 @@ rules for RegExp:
 - Single filter parameters:
 
  getAllRecordsByDate | getAllRecordsByDateGreater | getAllRecordsByDateLess
- data - "12:00:00"
++ data - "12:00:00"
 
 - GetRecordsType.getAllRecordsByDateRange
 - data - "12:00:07-13:00:06"
