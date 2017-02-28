@@ -15,16 +15,23 @@ public class Main {
 		/**
 		 * input params:
 		 * rules for RegExp:
+		 * 
+		 * - Single filter parameters:
 		 * getAllRecordsByDate | getAllRecordsByDateGreater | getAllRecordsByDateLess
 		 * data - "12:00:00"
+		 * 
 		 * GetRecordsType.getAllRecordsByDateRange
 		 * data - "12:00:07-13:00:06"
+		 * 
+		 * - Grouping filter parameters:
+		 * GetRecordsType.getAllRecordsByUsernameDateRange;
+		 * data - "12:00:05-13:00:06 [user1]"
 		 */
-		String path = "c:/Belhard/000/logs";	// log-files folder
-		String data = "12:00:07-13:00:06";		// input param
-		int countThreads = 1;					// count of threads
-		String outputFile = "c:/output.txt";	// output file
-		GetRecordsType getRecordsType = GetRecordsType.getAllRecordsByDateRange;
+		String path = "c:/Belhard/000/logs";		// log-files folder
+		String data = "12:00:05-13:00:06 [user1]";	// input param
+		int countThreads = 3;						// count of threads
+		String outputFile = "c:/output.txt";		// output file
+		GetRecordsType getRecordsType = GetRecordsType.getAllRecordsByUsernameDateRange;
 		
 		FileService fileService = new FileService();
 		RecordsService recordsService = new RecordsService();

@@ -65,6 +65,8 @@ public class MyThread extends Thread {
 				break;
 			case getAllRecordsByMessage:
 				records = recordsService.getAllRecordsByMessage(file, data);
+			case getAllRecordsByUsernameDateRange:
+				records = recordsService.getAllRecordsByUsernameDateRange(file, data);
 				break;
 			default:
 				records = recordsService.getAllRecords(file);

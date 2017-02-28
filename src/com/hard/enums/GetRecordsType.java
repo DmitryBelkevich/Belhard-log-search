@@ -8,4 +8,5 @@ public enum GetRecordsType {
 	getAllRecordsByDateRange,
 	getAllRecordsByUsername,
 	getAllRecordsByMessage,
+	getAllRecordsByUsernameDateRange,
 }

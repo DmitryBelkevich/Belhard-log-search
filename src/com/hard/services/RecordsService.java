@@ -11,6 +11,7 @@ import com.hard.factory.DateLessExpressionFactory;
 import com.hard.factory.DateRangeExpressionFactory;
 import com.hard.factory.ExpressionFactory;
 import com.hard.factory.MessageExpressionFactory;
+import com.hard.factory.UsernameDateRangeExpressionFactory;
 import com.hard.factory.UsernameExpressionFactory;
 import com.hard.interpreter.Expression;
 
@@ -117,6 +118,22 @@ public class RecordsService {
 		return filteredRecords;
 	}
 	
+	public List<String> getAllRecordsByUsernameDateRange(File file, String data) {
+		List<String> allRecords = recordDao.getAllRecords(file);
+		List<String> filteredRecords = new ArrayList<>();
+		
+		ExpressionFactory expressionFactory = getExpressionFactoryByName("UsernameDateRange");
+		
+		Expression expression = expressionFactory.getExpression(data);
+		
+		for (String record : allRecords) {
+			if (expression.interpret(record))
+				filteredRecords.add(record);
+		}
+		
+		return filteredRecords;
+	}
+	
 	private static ExpressionFactory getExpressionFactoryByName(String expressionFactoryName) {
 		switch (expressionFactoryName) {
 		case "Date":
@@ -131,6 +148,8 @@ public class RecordsService {
 			return new UsernameExpressionFactory();
 		case "Message":
 			return new MessageExpressionFactory();
+		case "UsernameDateRange":
+			return new UsernameDateRangeExpressionFactory();
 		default:
 			throw new RuntimeException(expressionFactoryName + " is not exist");
 		}
