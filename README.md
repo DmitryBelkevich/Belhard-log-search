@@ -6,7 +6,7 @@ rules for RegExp:
 -----------------
 
 - Single filter parameters:
-getAllRecordsByDate | getAllRecordsByDateGreater | getAllRecordsByDateLess
+-- getAllRecordsByDate | getAllRecordsByDateGreater | getAllRecordsByDateLess
 data - "12:00:00"
 
 GetRecordsType.getAllRecordsByDateRange
